@@ -1,5 +1,5 @@
 {
-  "name": "ionic-vue-app",
+  "name": "ionicApp",
   "integrations": {
     "capacitor": {}
   },
