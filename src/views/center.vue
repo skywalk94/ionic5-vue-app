@@ -2,10 +2,7 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-back-button default-href="/"></ion-back-button>
-        </ion-buttons>
-        <ion-title>main页</ion-title>
+        <ion-title>主体</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true"> 123 </ion-content>
@@ -18,19 +15,16 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-  IonBackButton,
-  IonButtons,
 } from "@ionic/vue";
 import { reactive, toRefs, onMounted } from "vue";
 export default {
+  name: "center",
   components: {
     IonContent,
     IonHeader,
     IonPage,
     IonTitle,
     IonToolbar,
-    IonBackButton,
-    IonButtons,
   },
   setup() {
     const that = reactive({});

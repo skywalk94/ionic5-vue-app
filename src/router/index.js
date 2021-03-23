@@ -5,12 +5,23 @@ import {
 
 const routes = [{
   path: '/',
-  name: 'index',
-  component: () => import('@/views/index.vue')
+  redirect: '/tab/index'
 }, {
-  path: '/main',
-  name: 'main',
-  component: () => import('@/views/main.vue')
+  path: '/tab/',
+  component: () => import('@/views/tab.vue'),
+  children: [{
+    path: 'index',
+    component: () => import('@/views/index.vue')
+  }, {
+    path: 'center',
+    component: () => import('@/views/center.vue')
+  }, {
+    path: 'person',
+    component: () => import('@/views/person.vue')
+  }]
+}, {
+  path: '/detail',
+  component: () => import('@/views/detail.vue')
 }]
 
 const router = createRouter({

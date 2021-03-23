@@ -6,10 +6,10 @@
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
-      <ion-button color="tertiary" @click="goMain()">跳转到main</ion-button>
-      <ion-fab vertical="bottom" horizontal="end">
-        <ion-fab-button>
-          <ion-icon :icon="add"></ion-icon>
+      <ion-button color="tertiary" @click="goDetail()">跳转到详情</ion-button>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button @click="takePhoto()">
+          <ion-icon :icon="camera"></ion-icon>
         </ion-fab-button>
       </ion-fab>
     </ion-content>
@@ -28,9 +28,11 @@ import {
   IonButton,
   IonIcon,
 } from "@ionic/vue";
-import { add } from "ionicons/icons";
+import { camera } from "ionicons/icons";
 import { useRouter } from "vue-router";
 import { reactive, toRefs } from "vue";
+import { usePhotoGallery } from "@/composables/usePhotoGallery";
+
 export default {
   name: "index",
   components: {
@@ -49,10 +51,11 @@ export default {
     const that = reactive({
       title: "首页",
     });
+    const { takePhoto } = usePhotoGallery();
     const methods = {
-      goMain() {
+      goDetail() {
         router.push({
-          path: "/main",
+          path: "/detail",
           query: {
             id: 123,
           },
@@ -60,7 +63,8 @@ export default {
       },
     };
     return {
-      add,
+      camera,
+      takePhoto,
       ...toRefs(that),
       ...methods,
     };
