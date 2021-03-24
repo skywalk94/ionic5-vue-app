@@ -1,5 +1,5 @@
 {
-  "name": "ionicApp",
+  "name": "ionic5-vue-app",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,13 +10,14 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@capacitor/android": "^2.4.7",
     "@capacitor/core": "2.4.7",
     "@ionic/pwa-elements": "^3.0.2",
     "@ionic/vue": "^5.4.0",
     "@ionic/vue-router": "^5.4.0",
     "core-js": "^3.6.5",
-    "vue": "^3.0.0-0",
-    "vue-router": "^4.0.0-0"
+    "vue": "^3.0.7",
+    "vue-router": "^4.0.5"
   },
   "devDependencies": {
     "@capacitor/cli": "2.4.7",
@@ -30,7 +31,8 @@
     "@vue/test-utils": "^2.0.0-0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0",
-    "vue-jest": "^5.0.0-0"
+    "vue-jest": "^5.0.0-0",
+    "webpack": "^4.0.0"
   },
   "description": "An Ionic project"
 }

@@ -7,14 +7,14 @@
           <ion-label>首页</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="center" href="/tab/center">
+        <ion-tab-button tab="element" href="/tab/element">
           <ion-icon :icon="grid" />
-          <ion-label>中心</ion-label>
+          <ion-label>ionic组件</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="person" href="/tab/person">
-          <ion-icon :icon="person" />
-          <ion-label>我的</ion-label>
+        <ion-tab-button tab="capacitor" href="/tab/capacitor">
+          <ion-icon :icon="aperture" />
+          <ion-label>原生Api</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>
@@ -30,7 +30,7 @@ import {
   IonIcon,
   IonPage,
 } from "@ionic/vue";
-import { flash, grid, person } from "ionicons/icons";
+import { flash, grid, aperture } from "ionicons/icons";
 
 export default {
   name: "Tabs",
@@ -39,7 +39,7 @@ export default {
     return {
       flash,
       grid,
-      person,
+      aperture,
     };
   },
 };

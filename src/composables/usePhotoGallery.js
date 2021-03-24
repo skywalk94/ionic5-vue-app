@@ -1,15 +1,7 @@
 import {
-    ref,
-    onMounted,
-    watch
-} from 'vue';
-import {
     Plugins,
     CameraResultType,
-    CameraSource,
-    CameraPhoto,
-    Capacitor,
-    FilesystemDirectory
+    CameraSource
 } from "@capacitor/core";
 
 export function usePhotoGallery() {
@@ -18,7 +10,7 @@ export function usePhotoGallery() {
     } = Plugins;
 
     const takePhoto = async () => {
-        const cameraPhoto = await Camera.getPhoto({
+        await Camera.getPhoto({
             resultType: CameraResultType.Uri,
             source: CameraSource.Camera,
             quality: 100

@@ -1,11 +1,11 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
+    <ion-header>
       <ion-toolbar>
-        <ion-title>主体</ion-title>
+        <ion-title>原生Api</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content :fullscreen="true"> 123 </ion-content>
+    <ion-content> 内容 </ion-content>
   </ion-page>
 </template>
 <script>
@@ -16,9 +16,8 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/vue";
-import { reactive, toRefs, onMounted } from "vue";
+import { reactive, toRefs } from "vue";
 export default {
-  name: "center",
   components: {
     IonContent,
     IonHeader,
@@ -28,7 +27,6 @@ export default {
   },
   setup() {
     const that = reactive({});
-    onMounted(() => {});
     const methods = {};
     return {
       ...toRefs(that),

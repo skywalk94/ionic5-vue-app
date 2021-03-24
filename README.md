@@ -1,1 +1,7 @@
-使用ionic5+vue开发app
+使用ionic5+vue3开发app示例
+todo
+练习ionic组件
+通过capacitor调用原生Api
+
+项目运行
+先看npm能不能成功运行，如果报错了换成cnpm

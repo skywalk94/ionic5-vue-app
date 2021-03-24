@@ -10,18 +10,21 @@ const routes = [{
   path: '/tab/',
   component: () => import('@/views/tab.vue'),
   children: [{
+    path: '',
+    redirect: 'tab/index'
+  }, {
     path: 'index',
     component: () => import('@/views/index.vue')
   }, {
-    path: 'center',
-    component: () => import('@/views/center.vue')
+    path: 'element',
+    component: () => import('@/views/element.vue')
   }, {
-    path: 'person',
-    component: () => import('@/views/person.vue')
+    path: 'capacitor',
+    component: () => import('@/views/capacitor.vue')
   }]
 }, {
-  path: '/detail',
-  component: () => import('@/views/detail.vue')
+  path: '/ionic-menu',
+  component: () => import('@/views/ionic-menu.vue')
 }]
 
 const router = createRouter({
