@@ -2,8 +2,7 @@
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-        <!-- <ion-back-button></ion-back-button> -->
+        <ion-back-button></ion-back-button>
       </ion-buttons>
       <ion-title><slot>组件标题</slot></ion-title>
     </ion-toolbar>
@@ -16,7 +15,7 @@ import {
   IonTitle,
   IonToolbar,
   IonButtons,
-  IonMenuButton,
+  IonBackButton,
 } from "@ionic/vue";
 export default {
   components: {
@@ -24,7 +23,7 @@ export default {
     IonTitle,
     IonToolbar,
     IonButtons,
-    IonMenuButton,
+    IonBackButton,
   },
 };
 </script>

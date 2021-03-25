@@ -1,41 +1,63 @@
 <template>
   <ion-page>
-    <headBack>ionic-menu组件</headBack>
-    <ion-content>
-      <ion-button expand="block" class="btn"> 打开Menu组件 </ion-button>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button color="primary"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>menu组件</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content id="main">
+      <ion-menu-toggle>
+        <ion-button> 打开Menu组件 </ion-button>
+      </ion-menu-toggle>
     </ion-content>
-    <ion-menu side="start" menu-id="menu" content-id="main">
-      <ion-content>123</ion-content>
-      <ion-router-outlet id="main" />
+    <ion-menu side="start" contentId="main">
+      <ion-content>
+        <ion-menu-toggle auto-hide="false">
+          <ion-button @click="goHome()"> 回到首页 </ion-button>
+        </ion-menu-toggle>
+      </ion-content>
     </ion-menu>
   </ion-page>
 </template>
 <script>
 import {
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+  IonButtons,
+  IonMenuButton,
   IonContent,
   IonPage,
-  IonRouterOutlet,
   IonMenu,
   IonButton,
-  // menuController,
+  IonMenuToggle,
 } from "@ionic/vue";
+import { useRouter } from "vue-router";
 import { reactive, toRefs } from "vue";
-import headBack from "@/components/headBack";
 export default {
   components: {
     IonPage,
     IonContent,
-    IonRouterOutlet,
     IonMenu,
-    headBack,
     IonButton,
-    // menuController,
+    IonHeader,
+    IonTitle,
+    IonToolbar,
+    IonButtons,
+    IonMenuButton,
+    IonMenuToggle,
   },
   setup() {
+    const router = useRouter();
     const state = reactive({});
     const methods = {
-      openFirst() {
-        // menuController.open("menu");
+      goHome() {
+        router.push({
+          path: "/tab/index",
+        });
       },
     };
     return {
@@ -46,7 +68,4 @@ export default {
 };
 </script>
 <style scoped>
-.btn {
-  margin-top: 30px;
-}
 </style>

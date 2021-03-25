@@ -6,17 +6,13 @@
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <div class="box">
-        <div
-          class="row ion-activatable"
-          v-for="(item, index) in eleList"
-          :key="index"
-          @click="goUrl(item.path)"
-        >
-          {{ item.name }}
-          <ion-ripple-effect></ion-ripple-effect>
-        </div>
-      </div>
+      <ion-button
+        v-for="(item, index) in eleList"
+        :key="index"
+        @click="goUrl(item.path)"
+      >
+        {{ item.name }}
+      </ion-button>
     </ion-content>
   </ion-page>
 </template>
@@ -27,7 +23,7 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-  IonRippleEffect,
+  IonButton,
 } from "@ionic/vue";
 import { reactive, toRefs } from "vue";
 import { useRouter } from "vue-router";
@@ -38,14 +34,14 @@ export default {
     IonPage,
     IonTitle,
     IonToolbar,
-    IonRippleEffect,
+    IonButton,
   },
   setup() {
     const router = useRouter();
     const state = reactive({
       eleList: [
         {
-          name: "ionic-menu",
+          name: "滑动弹窗",
           path: "/ionic-menu",
         },
       ],
@@ -64,21 +60,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.box {
-  padding: 15px;
-}
-
-.row {
-  position: relative;
-  font-size: 20px;
-  width: 100%;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #999999;
-  border-radius: 5px;
-  overflow: hidden;
-}
-</style>
